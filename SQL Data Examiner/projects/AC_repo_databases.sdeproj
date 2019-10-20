@@ -1,0 +1,982 @@
+﻿<SqlDataExaminer version="21">
+  <Sources>
+    <Source id="1">
+      <EngineType>MsSqlServer</EngineType>
+      <StorageType>LiveDb</StorageType>
+      <ServerName>localhost</ServerName>
+      <Database>repo_RepoManipulator</Database>
+      <WinAuth>True</WinAuth>
+    </Source>
+    <Source id="2">
+      <EngineType>MsSqlServer</EngineType>
+      <StorageType>LiveDb</StorageType>
+      <ServerName>localhost</ServerName>
+      <Database>repo_TemplateAisberg</Database>
+      <WinAuth>True</WinAuth>
+    </Source>
+  </Sources>
+  <Items>
+    <Item name="CFG.AC_LOG" type="table">
+      <Columns>
+        <Column name="ID" key="true" />
+        <Column name="Date" />
+        <Column name="Text" />
+        <Column name="Error" />
+        <Column name="Duration" />
+        <Column name="Param1" />
+        <Column name="Param2" />
+        <Column name="Param3" />
+        <Column name="Param4" />
+        <Column name="Param5" />
+        <Column name="Param6" />
+        <Column name="Status" />
+      </Columns>
+    </Item>
+    <Item name="CFG.COLUMN_DEPENDENCIES" type="view">
+      <Columns>
+        <Column name="ColumnID" />
+        <Column name="ParentColumnID" />
+        <Column name="Type" />
+        <Column name="Statement" />
+      </Columns>
+    </Item>
+    <Item name="CFG.COLUMN_REFERENCES" type="table">
+      <Columns>
+        <Column name="ColumnID" key="true" />
+        <Column name="Referencing_Columns" />
+        <Column name="Referenced_Columns" />
+      </Columns>
+    </Item>
+    <Item name="CFG.COLUMNS" type="table">
+      <Columns>
+        <Column name="ColumnID" key="true" />
+        <Column name="TableID" />
+        <Column name="Column_Name" />
+        <Column name="Description" />
+        <Column name="TypeID" />
+        <Column name="Character_Maximum_Length" />
+        <Column name="Numeric_Scale" />
+        <Column name="Numeric_Precision" />
+        <Column name="Is_Nullable" />
+        <Column name="PK_Ordinal_Position" />
+        <Column name="FriendlyName" />
+        <Column name="ToOLAP" />
+        <Column name="AggregateID" />
+        <Column name="Default" />
+        <Column name="IsCalculated" />
+        <Column name="IsPersisted" />
+        <Column name="Statement" />
+        <Column name="IsIdentity" />
+        <Column name="IdentitySeed" />
+        <Column name="IdentityIncrement" />
+        <Column name="Anonymize" />
+        <Column name="Collation" />
+      </Columns>
+    </Item>
+    <Item name="CFG.CONNECTORS" type="table">
+      <Columns>
+        <Column name="ConnectorID" key="true" />
+        <Column name="ConnectorName" />
+        <Column name="ConnectorTypeID" />
+        <Column name="ConnectionString" />
+        <Column name="Column_Names_First_Row" />
+        <Column name="Unicode" />
+        <Column name="Locale" />
+        <Column name="Code_Page" />
+        <Column name="Format" />
+        <Column name="Text_Qualifier" />
+        <Column name="Header_Row_Delimiter" />
+        <Column name="Header_Rows_To_Skip" />
+        <Column name="Row_Delimiter" />
+        <Column name="Column_Delimiter" />
+        <Column name="QuotedIdentifier" />
+        <Column name="ServerName" />
+        <Column name="DatabaseName" />
+      </Columns>
+    </Item>
+    <Item name="CFG.DEPLOYMENT_PACKAGES" type="table">
+      <Columns>
+        <Column name="DepPackageID" key="true" />
+        <Column name="DeploymentID" />
+        <Column name="PackageID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.DEPLOYMENTS" type="table">
+      <Columns>
+        <Column name="DeploymentID" key="true" />
+        <Column name="Name" />
+        <Column name="Description" />
+        <Column name="DepDirectory" />
+        <Column name="DepDACPAC" />
+        <Column name="DepPowerPivot" />
+        <Column name="DepTableau" />
+        <Column name="DepQlik" />
+        <Column name="DepPowerBI" />
+        <Column name="DepPackageType" />
+        <Column name="DepSSISConfiguration" />
+        <Column name="SQLCompability" />
+        <Column name="DepDWH" />
+        <Column name="DepAllowDataLoss" />
+        <Column name="DepDropObjectsNotInSource" />
+        <Column name="DepBackupDatabaseBeforeChanges" />
+        <Column name="DepBlockWhenDriftDetected" />
+        <Column name="DepDeployDatabaseInSingleUserMode" />
+        <Column name="DepAllowIncompatiblePlatform" />
+        <Column name="DWHServer" />
+        <Column name="DWHIntegratedSecurity" />
+        <Column name="DWHUser" />
+        <Column name="DWHPassword" />
+        <Column name="DWHDB" />
+        <Column name="DWHConnectionString" />
+        <Column name="ConfigType" />
+        <Column name="EnvVar" />
+        <Column name="SetEnvVar" />
+        <Column name="UseProjectReference" />
+        <Column name="OLAPXMLA" />
+        <Column name="OLAPServer" />
+        <Column name="OLAPDB" />
+        <Column name="OLAPUser" />
+        <Column name="OLAPPassword" />
+        <Column name="OLAPProcess" />
+        <Column name="OLAPCreateCube" />
+        <Column name="OLAPCompability" />
+        <Column name="TABXMLA" />
+        <Column name="TABServer" />
+        <Column name="TABDB" />
+        <Column name="TABUser" />
+        <Column name="TABPassword" />
+        <Column name="TABProcess" />
+        <Column name="TABCreateCube" />
+        <Column name="TABCompability" />
+      </Columns>
+    </Item>
+    <Item name="CFG.DWH_ARCHITECTURE" type="view">
+      <Columns>
+        <Column name="SrcID" />
+        <Column name="PackageID" />
+        <Column name="DestID" />
+        <Column name="ConnectorID" />
+        <Column name="Weight" />
+        <Column name="Main" />
+        <Column name="Show" />
+      </Columns>
+    </Item>
+    <Item name="CFG.DWH_ARCHITECTURE_OBJECTS" type="table">
+      <Columns>
+        <Column name="ID" key="true" />
+        <Column name="SchemaID" />
+        <Column name="SchemaTypeID" />
+        <Column name="Col" />
+        <Column name="Row" />
+        <Column name="ConnectorID" />
+        <Column name="OrderNr" />
+      </Columns>
+    </Item>
+    <Item name="CFG.FILTER_OBJECTS" type="table">
+      <Columns>
+        <Column name="FilterObjectID" key="true" />
+        <Column name="FilterID" />
+        <Column name="ObjectID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.FILTERS" type="table">
+      <Columns>
+        <Column name="FilterID" key="true" />
+        <Column name="Name" />
+      </Columns>
+    </Item>
+    <Item name="CFG.GALAXIES" type="table">
+      <Columns>
+        <Column name="GalaxyID" key="true" />
+        <Column name="Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="CFG.GROUPS" type="table">
+      <Columns>
+        <Column name="GroupID" key="true" />
+        <Column name="Name" />
+        <Column name="Description" />
+        <Column name="IsWorkflow" />
+        <Column name="FileName" />
+        <Column name="FileNameEnable" />
+        <Column name="FileNameDisable" />
+      </Columns>
+    </Item>
+    <Item name="CFG.HIERARCHIES" type="table">
+      <Columns>
+        <Column name="HierarchyID" key="true" />
+        <Column name="TableID" />
+        <Column name="Hierarchy_Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="CFG.HIERARCHY_COLUMNS" type="table">
+      <Columns>
+        <Column name="HierarchyColID" key="true" />
+        <Column name="HierarchyID" />
+        <Column name="ColumnID" />
+        <Column name="SeqNr" />
+        <Column name="Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="CFG.HIST_CALC_COLUMNS" type="table">
+      <Columns>
+        <Column name="CalcColumnID" key="true" />
+        <Column name="TableRefID" />
+        <Column name="Column_Name" />
+        <Column name="TypeID" />
+        <Column name="Character_Maximum_Length" />
+        <Column name="Numeric_Scale" />
+        <Column name="Numeric_Precision" />
+        <Column name="Statement" />
+        <Column name="EmptyValue" />
+        <Column name="EmptyValueUseOld" />
+      </Columns>
+    </Item>
+    <Item name="CFG.HIST_COLUMN_REFERENCES" type="table">
+      <Columns>
+        <Column name="ColumnRefID" key="true" />
+        <Column name="TableRefID" />
+        <Column name="ColumnID" />
+        <Column name="SCD_Type" />
+        <Column name="EmptyValue" />
+        <Column name="EmptyValueUseOld" />
+      </Columns>
+    </Item>
+    <Item name="CFG.HIST_TABLE_REFERENCES" type="table">
+      <Columns>
+        <Column name="TableRefID" key="true" />
+        <Column name="PackageID" />
+        <Column name="TableID" />
+        <Column name="InsertOnly" />
+        <Column name="Do_not_close" />
+        <Column name="Filter" />
+        <Column name="DelFilter" />
+        <Column name="UpdateStatistics" />
+        <Column name="Truncate" />
+        <Column name="UseLogging" />
+        <Column name="HistType" />
+        <Column name="Procedure" />
+        <Column name="UseVaultID" />
+        <Column name="PreSQL" />
+        <Column name="PostSQL" />
+        <Column name="ValidFrom_Statement_Initial" />
+        <Column name="ValidFrom_Statement" />
+        <Column name="ValidTo_Statement" />
+        <Column name="UseExistingHistory" />
+        <Column name="DefaultBufferMaxRows" />
+        <Column name="DefaultBufferSize" />
+        <Column name="MaxInsertCommitSize" />
+        <Column name="KeepIdentity" />
+        <Column name="KeepNulls" />
+        <Column name="TableLock" />
+        <Column name="CheckConstraints" />
+        <Column name="RowsPerBatch" />
+        <Column name="PersistSource" />
+        <Column name="ExceptionIfEmptySource" />
+      </Columns>
+    </Item>
+    <Item name="CFG.IMP_COLUMN_REFERENCES" type="table">
+      <Columns>
+        <Column name="ColumnRefID" key="true" />
+        <Column name="TableRefID" />
+        <Column name="SourceColumnID" />
+        <Column name="ColumnID" />
+        <Column name="Description" />
+        <Column name="SSIS_Statement" />
+      </Columns>
+    </Item>
+    <Item name="CFG.IMP_TABLE_REFERENCES" type="table">
+      <Columns>
+        <Column name="TableRefID" key="true" />
+        <Column name="PackageID" />
+        <Column name="TableID" />
+        <Column name="Description" />
+        <Column name="SourceID" />
+        <Column name="Filter" />
+        <Column name="Imp_SQL" />
+        <Column name="UpdateStatistics" />
+        <Column name="UseLogging" />
+        <Column name="PreSQL" />
+        <Column name="PostSQL" />
+        <Column name="DefaultBufferMaxRows" />
+        <Column name="DefaultBufferSize" />
+        <Column name="MaxInsertCommitSize" />
+        <Column name="KeepIdentity" />
+        <Column name="KeepNulls" />
+        <Column name="TableLock" />
+        <Column name="CheckConstraints" />
+        <Column name="RowsPerBatch" />
+      </Columns>
+    </Item>
+    <Item name="CFG.INDEX_COLUMNS" type="table">
+      <Columns>
+        <Column name="IndexColumnID" key="true" />
+        <Column name="IndexID" />
+        <Column name="ColumnID" />
+        <Column name="Ordinal_Position" />
+        <Column name="isDescending" />
+        <Column name="IncludeOnly" />
+      </Columns>
+    </Item>
+    <Item name="CFG.INDEXES" type="table">
+      <Columns>
+        <Column name="IndexID" key="true" />
+        <Column name="Index_Name" />
+        <Column name="Description" />
+        <Column name="TableID" />
+        <Column name="isClustered" />
+        <Column name="isUnique" />
+        <Column name="isPK" />
+        <Column name="isColumnstore" />
+        <Column name="CompressionTypeID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.MACROS" type="table" extracted="True">
+      <Columns>
+        <Column name="MacroName" key="true" />
+        <Column name="Description" />
+        <Column name="LanguageID" />
+        <Column name="Statement" />
+        <Column name="TableID" />
+        <Column name="Hashkey" />
+        <Column name="MacroID" extracted="false" />
+      </Columns>
+    </Item>
+    <Item name="CFG.MODEL_DIM_COLUMNS" type="table">
+      <Columns>
+        <Column name="ModDimColID" key="true" />
+        <Column name="ModDimID" />
+        <Column name="Name" />
+        <Column name="Description" />
+        <Column name="FriendlyName" />
+        <Column name="IsKey" />
+      </Columns>
+    </Item>
+    <Item name="CFG.MODEL_DIMS" type="table">
+      <Columns>
+        <Column name="ModDimID" key="true" />
+        <Column name="ModelID" />
+        <Column name="Name" />
+        <Column name="Description" />
+        <Column name="FriendlyName" />
+        <Column name="Historized" />
+        <Column name="IsCalendar" />
+      </Columns>
+    </Item>
+    <Item name="CFG.MODEL_FACT_DIMS" type="table">
+      <Columns>
+        <Column name="ModFactDimID" key="true" />
+        <Column name="ModFactID" />
+        <Column name="ModDimID" />
+        <Column name="Name" />
+        <Column name="Description" />
+        <Column name="FriendlyName" />
+      </Columns>
+    </Item>
+    <Item name="CFG.MODEL_FACT_MEASURES" type="table">
+      <Columns>
+        <Column name="ModFactColID" key="true" />
+        <Column name="ModFactID" />
+        <Column name="Name" />
+        <Column name="Description" />
+        <Column name="FriendlyName" />
+      </Columns>
+    </Item>
+    <Item name="CFG.MODEL_FACTS" type="table">
+      <Columns>
+        <Column name="ModFactID" key="true" />
+        <Column name="ModelID" />
+        <Column name="Name" />
+        <Column name="Description" />
+        <Column name="FriendlyName" />
+      </Columns>
+    </Item>
+    <Item name="CFG.MODELS" type="table">
+      <Columns>
+        <Column name="ModelID" key="true" />
+        <Column name="Name" />
+        <Column name="Description" />
+        <Column name="Hashkey" />
+      </Columns>
+    </Item>
+    <Item name="CFG.OBJECT_GROUPS" type="table">
+      <Columns>
+        <Column name="ObjectGroupID" key="true" />
+        <Column name="GroupID" />
+        <Column name="ObjectID" />
+        <Column name="UpdateSuccessors" />
+        <Column name="UpdatePredecessors" />
+        <Column name="Inherited" />
+        <Column name="Exclude" />
+        <Column name="ParentObjects" />
+      </Columns>
+    </Item>
+    <Item name="CFG.OBJECT_RELATIONS" type="view">
+      <Columns>
+        <Column name="SrcID" />
+        <Column name="SrcObjectTypeID" />
+        <Column name="SrcObjectID" />
+        <Column name="DoingID" />
+        <Column name="DoingObjectTypeID" />
+        <Column name="DoingObjectID" />
+        <Column name="DestID" />
+        <Column name="DestObjectTypeID" />
+        <Column name="DestObjectID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.OBJECT_SCRIPT_PARAMS" type="table">
+      <Columns>
+        <Column name="ObjectScriptParamID" key="true" />
+        <Column name="ObjectScriptID" />
+        <Column name="SeqNr" />
+        <Column name="Parameter" />
+        <Column name="DefaultValue" />
+      </Columns>
+    </Item>
+    <Item name="CFG.OBJECT_SCRIPTS" type="table" extracted="True">
+      <Columns>
+        <Column name="Name" key="true" />
+        <Column name="Table" />
+        <Column name="Description" />
+        <Column name="Statement" />
+        <Column name="Hashkey" />
+        <Column name="ObjectScriptID" extracted="false" />
+      </Columns>
+    </Item>
+    <Item name="CFG.OBJECTS" type="view">
+      <Columns>
+        <Column name="ID" />
+        <Column name="ObjectTypeID" />
+        <Column name="SchemaTypeID" />
+        <Column name="ObjectID" />
+        <Column name="MainID" />
+        <Column name="ObjectName" />
+        <Column name="ViewTableID" />
+        <Column name="StarID" />
+        <Column name="IsError" />
+        <Column name="IsVault" />
+        <Column name="FriendlyName" />
+        <Column name="TableTypeID" />
+        <Column name="SchemaID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.OLAP_PARTITIONS" type="table">
+      <Columns>
+        <Column name="PartitionID" key="true" />
+        <Column name="Name" />
+        <Column name="TableID" />
+        <Column name="SQL" />
+        <Column name="Slice" />
+      </Columns>
+    </Item>
+    <Item name="CFG.PACKAGE_DEPENDICIES" type="table">
+      <Columns>
+        <Column name="ID" key="true" />
+        <Column name="PackageID" />
+        <Column name="NextPackageID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.PACKAGE_DEPENDICIES_VIEW" type="view">
+      <Columns>
+        <Column name="PackageID" />
+        <Column name="NextPackageID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.PACKAGE_SCRIPTS" type="table">
+      <Columns>
+        <Column name="PackageScriptID" key="true" />
+        <Column name="PackageID" />
+        <Column name="ScriptID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.PACKAGE_VARIABLES" type="table">
+      <Columns>
+        <Column name="PackageVarID" key="true" />
+        <Column name="PackageID" />
+        <Column name="VarName" />
+        <Column name="VarType" />
+        <Column name="Description" />
+        <Column name="Expression" />
+        <Column name="InitialValue" />
+      </Columns>
+    </Item>
+    <Item name="CFG.PACKAGES" type="table">
+      <Columns>
+        <Column name="PackageID" key="true" />
+        <Column name="PackageName" />
+        <Column name="PackageTypeID" />
+        <Column name="Description" />
+        <Column name="isHandmade" />
+        <Column name="DoNotRun" />
+        <Column name="Hashkey" />
+      </Columns>
+    </Item>
+    <Item name="CFG.PARAM_VALUES" type="table" extracted="True">
+      <Columns>
+        <Column name="Param_Name" key="true" />
+        <Column name="Param_Value" />
+        <Column name="ParamValueID" extracted="false" />
+      </Columns>
+    </Item>
+    <Item name="CFG.PERS_TABLE_REFERENCES" type="table">
+      <Columns>
+        <Column name="TableRefID" key="true" />
+        <Column name="PackageID" />
+        <Column name="TransformationID" />
+        <Column name="UpdateSnapshots" />
+        <Column name="PreSQL" />
+        <Column name="PostSQL" />
+      </Columns>
+    </Item>
+    <Item name="CFG.PREDEFINED_TRANSFORMATIONS" type="table" extracted="True">
+      <Columns>
+        <Column name="Name" key="true" />
+        <Column name="PreTransID" />
+        <Column name="Description" />
+        <Column name="CheckStatement" />
+        <Column name="TransStatement" />
+        <Column name="Hashkey" />
+      </Columns>
+    </Item>
+    <Item name="CFG.REF_ARC" type="view">
+      <Columns>
+        <Column name="SrcID" />
+        <Column name="DestID" />
+        <Column name="cnt" />
+      </Columns>
+    </Item>
+    <Item name="CFG.ROLE_CUBEDIMENSIONS" type="table">
+      <Columns>
+        <Column name="RoleCubeDimID" key="true" />
+        <Column name="RoleID" />
+        <Column name="FactColumnID" />
+        <Column name="ColumnID" />
+        <Column name="AllowedSet" />
+        <Column name="DeniedSet" />
+        <Column name="DefaultMember" />
+        <Column name="VisualTotals" />
+      </Columns>
+    </Item>
+    <Item name="CFG.ROLE_CUBES" type="table">
+      <Columns>
+        <Column name="RoleCubeID" key="true" />
+        <Column name="RoleID" />
+        <Column name="StarID" />
+        <Column name="AllowRead" />
+        <Column name="AllowWrite" />
+        <Column name="AllowDrillthrough" />
+        <Column name="AllowProcess" />
+        <Column name="ReadCells" />
+        <Column name="ReadContingentCells" />
+        <Column name="ReadWriteCells" />
+      </Columns>
+    </Item>
+    <Item name="CFG.ROLE_DIMENSIONS" type="table">
+      <Columns>
+        <Column name="RoleDimID" key="true" />
+        <Column name="RoleID" />
+        <Column name="ColumnID" />
+        <Column name="AllowRead" />
+        <Column name="AllowWrite" />
+        <Column name="AllowReadDefinition" />
+        <Column name="AllowProcess" />
+        <Column name="AllowedSet" />
+        <Column name="DeniedSet" />
+        <Column name="DefaultMember" />
+        <Column name="VisualTotals" />
+      </Columns>
+    </Item>
+    <Item name="CFG.ROLE_USERS" type="table">
+      <Columns>
+        <Column name="RoleUserID" key="true" />
+        <Column name="RoleID" />
+        <Column name="User" />
+      </Columns>
+    </Item>
+    <Item name="CFG.ROLES" type="table">
+      <Columns>
+        <Column name="RoleID" key="true" />
+        <Column name="Role_Name" />
+        <Column name="Description" />
+        <Column name="FullControl" />
+        <Column name="ProcessDatabase" />
+        <Column name="ReadDefinition" />
+        <Column name="ReadDatasource" />
+        <Column name="ReadDatasourceDefinition" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SCHEMAS" type="table">
+      <Columns>
+        <Column name="SchemaID" key="true" />
+        <Column name="SchemaTypeID" />
+        <Column name="Schema_Name" />
+        <Column name="DB" />
+        <Column name="Description" />
+        <Column name="Hashkey" />
+        <Column name="SeqNr" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SCRIPTS" type="table" extracted="True">
+      <Columns>
+        <Column name="Script_Name" key="true" />
+        <Column name="ScriptTypeID" />
+        <Column name="SeqNr" />
+        <Column name="Description" />
+        <Column name="Script" />
+        <Column name="Inactive" />
+        <Column name="ScriptID" extracted="false" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SNAPSHOT_GROUP_REFERENCES" type="table" extracted="True">
+      <Columns>
+        <Column name="SnapshotRefID" key="true" />
+        <Column name="SnapshotGroupID" />
+        <Column name="SnapshotID" />
+        <Column name="Hashkey" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SNAPSHOT_GROUPS" type="table" extracted="True">
+      <Columns>
+        <Column name="SnapshotGroupID" key="true" />
+        <Column name="Group_Name" />
+        <Column name="Description" />
+        <Column name="Hashkey" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SNAPSHOTS" type="table" extracted="True">
+      <Columns>
+        <Column name="SnapshotID" key="true" />
+        <Column name="Snapshot_Name" />
+        <Column name="Description" />
+        <Column name="UPDATE_SQL" />
+        <Column name="Hashkey" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SOURCE_COLUMNS" type="table">
+      <Columns>
+        <Column name="SourceColumnID" key="true" />
+        <Column name="SourceID" />
+        <Column name="Column_Name" />
+        <Column name="Description" />
+        <Column name="TypeID" />
+        <Column name="Character_Maximum_Length" />
+        <Column name="Numeric_Scale" />
+        <Column name="Numeric_Precision" />
+        <Column name="Is_Nullable" />
+        <Column name="PK_Ordinal_Position" />
+        <Column name="OrderNr" />
+        <Column name="TextQualified" />
+        <Column name="DelimitedColumnWidth" />
+        <Column name="ShortText" />
+        <Column name="MediumText" />
+        <Column name="LongText" />
+        <Column name="SAP_DQ_Definition" />
+        <Column name="FriendlyName" />
+        <Column name="Anonymize" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SOURCE_CONSTRAINTS" type="table">
+      <Columns>
+        <Column name="SourceConstraintID" key="true" />
+        <Column name="SourceID" />
+        <Column name="SourceColumnID" />
+        <Column name="IsError" />
+        <Column name="Description" />
+        <Column name="Statement" />
+        <Column name="MessageStatement" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SOURCE_REFERENCE_COLUMNS" type="table">
+      <Columns>
+        <Column name="SourceRefColumnID" key="true" />
+        <Column name="SourceRefID" />
+        <Column name="SourceColumn1ID" />
+        <Column name="SourceColumn2ID" />
+        <Column name="Statement1" />
+        <Column name="Statement2" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SOURCE_REFERENCES" type="table">
+      <Columns>
+        <Column name="SourceRefID" key="true" />
+        <Column name="CardinalityTypeID" />
+        <Column name="JoinTypeID" />
+        <Column name="Source1ID" />
+        <Column name="Source1Alias" />
+        <Column name="Source2ID" />
+        <Column name="Source2Alias" />
+        <Column name="Description" />
+        <Column name="Reference_Statement" />
+        <Column name="IsPKReference" />
+        <Column name="Inheritance" />
+      </Columns>
+    </Item>
+    <Item name="CFG.SOURCES" type="table">
+      <Columns>
+        <Column name="SourceID" key="true" />
+        <Column name="ConnectorID" />
+        <Column name="SourceTypeID" />
+        <Column name="Description" />
+        <Column name="Source_Schema" />
+        <Column name="Source_Name" />
+        <Column name="Path" />
+        <Column name="ProcessDirectory" />
+        <Column name="Directory" />
+        <Column name="FileSpec" />
+        <Column name="IncludeSubDir" />
+        <Column name="SAP_DQ_Mode" />
+        <Column name="SAP_DQ_Type" />
+        <Column name="SAP_DQ_RFCDest" />
+        <Column name="SAP_DQ_RFCUrl" />
+        <Column name="SAP_DQ_LogSys" />
+        <Column name="SAP_DQ_Extract" />
+        <Column name="SAP_DQ_Timestamp" />
+        <Column name="SAP_DQ_Transfer" />
+        <Column name="SAP_DQ_AutoSync" />
+        <Column name="Hashkey" />
+        <Column name="FriendlyName" />
+        <Column name="Query" />
+        <Column name="AnonStatement" />
+        <Column name="Group" />
+      </Columns>
+    </Item>
+    <Item name="CFG.STARS" type="table">
+      <Columns>
+        <Column name="StarID" key="true" />
+        <Column name="GalaxyID" />
+        <Column name="Star_Name" />
+        <Column name="SchemaID" />
+        <Column name="Description" />
+        <Column name="MDX" />
+        <Column name="TabMDX" />
+        <Column name="OrderNr" />
+        <Column name="Hashkey" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TABLE_DEPENDENCIES" type="view">
+      <Columns>
+        <Column name="TableID" />
+        <Column name="ParentTableID" />
+        <Column name="DepTypeID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TABLE_REFERENCE_COLUMNS" type="table">
+      <Columns>
+        <Column name="TableRefColumnID" key="true" />
+        <Column name="TableRefID" />
+        <Column name="Column1ID" />
+        <Column name="Column2ID" />
+        <Column name="Statement1" />
+        <Column name="Statement2" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TABLE_REFERENCES" type="table">
+      <Columns>
+        <Column name="TableRefID" key="true" />
+        <Column name="CardinalityTypeID" />
+        <Column name="JoinTypeID" />
+        <Column name="Table1ID" />
+        <Column name="Table1Alias" />
+        <Column name="Table2ID" />
+        <Column name="Table2Alias" />
+        <Column name="Description" />
+        <Column name="ParentDescription" />
+        <Column name="Reference_Statement" />
+        <Column name="AutoCreated" />
+        <Column name="Hashkey" />
+        <Column name="TabOlapDoubleside" />
+        <Column name="Inactive" />
+        <Column name="Inheritance" />
+        <Column name="IsPKReference" />
+        <Column name="ParentSourceRefID" />
+        <Column name="ParentTableRefID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TABLES" type="table">
+      <Columns>
+        <Column name="TableID" key="true" />
+        <Column name="TableTypeID" />
+        <Column name="Description" />
+        <Column name="SchemaID" />
+        <Column name="Table_Name" />
+        <Column name="HistOfTableID" />
+        <Column name="PersistOfTableID" />
+        <Column name="FriendlyName" />
+        <Column name="HubOfTableID" />
+        <Column name="SatOfTableID" />
+        <Column name="LinkOfTableID" />
+        <Column name="CompressionTypeID" />
+        <Column name="Hashkey" />
+        <Column name="AnonStatement" />
+        <Column name="DoNotExport" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TRANS_TABLE_REFERENCES" type="table">
+      <Columns>
+        <Column name="TableRefID" key="true" />
+        <Column name="PackageID" />
+        <Column name="TransformationID" />
+        <Column name="TableID" />
+        <Column name="PreSQL" />
+        <Column name="PostSQL" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TRANSFORMATION_COLUMNS" type="table">
+      <Columns>
+        <Column name="TransColumnID" key="true" />
+        <Column name="TransformationID" />
+        <Column name="ColumnName" />
+        <Column name="TransTableID" />
+        <Column name="ColumnID" />
+        <Column name="Statement" />
+        <Column name="IsAggregate" />
+        <Column name="DefaultValue" />
+        <Column name="Description" />
+        <Column name="SequenceNumber" />
+        <Column name="PK_Ordinal_Position" />
+        <Column name="FriendlyName" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TRANSFORMATION_REFERENCES" type="table">
+      <Columns>
+        <Column name="TransRefID" key="true" />
+        <Column name="TransformationID" />
+        <Column name="TransTable1ID" />
+        <Column name="TransTable2ID" />
+        <Column name="TableRefID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TRANSFORMATION_RENAME_COLUMNS" type="table">
+      <Columns>
+        <Column name="TranRenColID" key="true" />
+        <Column name="TransformationID" />
+        <Column name="OldName" />
+        <Column name="NewName" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TRANSFORMATION_SNAPSHOTS" type="table">
+      <Columns>
+        <Column name="TransSnapshotID" key="true" />
+        <Column name="TransformationID" />
+        <Column name="SnapshotID" />
+        <Column name="SnapshotGroupID" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TRANSFORMATION_STANDARDS" type="table">
+      <Columns>
+        <Column name="TransStandardID" key="true" />
+        <Column name="TransformationID" />
+        <Column name="PreTransID" />
+        <Column name="UseWithVault" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TRANSFORMATION_STARS" type="table">
+      <Columns>
+        <Column name="TransStarID" key="true" />
+        <Column name="TransformationID" />
+        <Column name="StarID" />
+        <Column name="Star_Transformation_Name" />
+        <Column name="Star_TransformationID" />
+        <Column name="isFact" />
+        <Column name="Filter_Statement" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TRANSFORMATION_TABLES" type="table">
+      <Columns>
+        <Column name="TransTableID" key="true" />
+        <Column name="TransformationID" />
+        <Column name="SequenceNumber" />
+        <Column name="TableID" />
+        <Column name="TableAlias" />
+        <Column name="Subselect" />
+        <Column name="JoinHistTypeID" />
+        <Column name="JoinTypeID" />
+        <Column name="ForceJoin" />
+        <Column name="Reference_Statement" />
+        <Column name="Filter_Statement" />
+        <Column name="IsOutput" />
+        <Column name="UnionAll" />
+        <Column name="Distinct" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TRANSFORMATIONS" type="table">
+      <Columns>
+        <Column name="TransformationID" key="true" />
+        <Column name="TransTypeID" />
+        <Column name="SchemaID" />
+        <Column name="Transformation_Name" />
+        <Column name="CreateDummyEntry" />
+        <Column name="TransHistTypeID" />
+        <Column name="ViewDefinition" />
+        <Column name="PersistTable_Name" />
+        <Column name="PersistPackage_Name" />
+        <Column name="TableID" />
+        <Column name="PersistTableID" />
+        <Column name="PersistPackageID" />
+        <Column name="isCreated" />
+        <Column name="isFact" />
+        <Column name="Filter" />
+        <Column name="Having" />
+        <Column name="Description" />
+        <Column name="HubOfTableID" />
+        <Column name="SatOfTableID" />
+        <Column name="LinkOfTableID" />
+        <Column name="Hashkey" />
+        <Column name="SpecialType" />
+        <Column name="IsDistinct" />
+        <Column name="CreateResultTable" />
+        <Column name="SourceID" />
+        <Column name="ModDimID" />
+        <Column name="ModFactID" />
+        <Column name="FriendlyName" />
+      </Columns>
+    </Item>
+    <Item name="CFG.TYPES_CUSTOM" type="table">
+      <Columns>
+        <Column name="TypeID" key="true" />
+        <Column name="ConnectorTypeID" />
+        <Column name="SrcType" />
+        <Column name="hasLength" />
+        <Column name="hasPrecision" />
+        <Column name="hasScale" />
+        <Column name="SrcSSISType" />
+        <Column name="DestType" />
+        <Column name="DestSSISType" />
+        <Column name="Conversion" />
+        <Column name="OLEDBType" />
+        <Column name="ForcedLength" />
+        <Column name="ForcedScale" />
+        <Column name="ForcedPrecision" />
+      </Columns>
+    </Item>
+    <Item name="CFG.WORKFLOW_PACKAGE_REFERENCES" type="table">
+      <Columns>
+        <Column name="PackageRefID" key="true" />
+        <Column name="PackageID" />
+        <Column name="ChldPackageID" />
+        <Column name="PreSQL" />
+        <Column name="PostSQL" />
+      </Columns>
+    </Item>
+  </Items>
+  <SchemaMapping>
+    <SMItem schema1="INTERN" schema2="(none)" />
+    <SMItem schema1="CFG" schema2="CFG" />
+    <SMItem schema1="dbo" schema2="dbo" />
+  </SchemaMapping>
+  <ProjectSettings>
+    <AllSettings>
+      <ComparisonCaseSensitive>1</ComparisonCaseSensitive>
+      <CompareTrimmedStrings>False</CompareTrimmedStrings>
+      <EmptyEqualsNull>False</EmptyEqualsNull>
+      <PrecedeStringConstWithNPrefix>0</PrecedeStringConstWithNPrefix>
+      <AutoSelectKeyColumns>0</AutoSelectKeyColumns>
+      <PerformanceOptions>
+        <PerformanceOption name="Auto" value="True" />
+      </PerformanceOptions>
+    </AllSettings>
+  </ProjectSettings>
+</SqlDataExaminer>
