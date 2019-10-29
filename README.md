@@ -5,4 +5,4 @@ AnalyticsCreator stores all project data in project repositories. These are SQL 
 
 About AnalyticsCreator: "Easily manage the full life cycle of Data Management: DWA, DM, Cube, Frontend." www.analyticscreator.com
 
-**Read the WIKI!**
+**Read the [WIKI](https://github.com/aisbergde/AnalyticsCreator_Toolkit/wiki)!**
