@@ -4,14 +4,14 @@
       <EngineType>MsSqlServer</EngineType>
       <StorageType>LiveDb</StorageType>
       <ServerName>localhost</ServerName>
-      <Database>repo_RepoManipulator</Database>
+      <Database>repo_TemplateAisbergDe</Database>
       <WinAuth>True</WinAuth>
     </Source>
     <Source id="2">
       <EngineType>MsSqlServer</EngineType>
       <StorageType>LiveDb</StorageType>
       <ServerName>localhost</ServerName>
-      <Database>repo_TemplateAisberg</Database>
+      <Database>repo_test01</Database>
       <WinAuth>True</WinAuth>
     </Source>
   </Sources>
@@ -439,7 +439,7 @@
     <Item name="CFG.OBJECT_SCRIPTS" type="table" extracted="True">
       <Columns>
         <Column name="Name" key="true" />
-        <Column name="Table" />
+        <Column name="Table" key="true" />
         <Column name="Description" />
         <Column name="Statement" />
         <Column name="Hashkey" />
@@ -533,8 +533,8 @@
     </Item>
     <Item name="CFG.PREDEFINED_TRANSFORMATIONS" type="table" extracted="True">
       <Columns>
-        <Column name="Name" key="true" />
-        <Column name="PreTransID" />
+        <Column name="PreTransID" key="true" />
+        <Column name="Name" />
         <Column name="Description" />
         <Column name="CheckStatement" />
         <Column name="TransStatement" />
@@ -961,12 +961,220 @@
         <Column name="PostSQL" />
       </Columns>
     </Item>
+    <Item name="INTERN.AGGREGATES" type="table">
+      <Columns>
+        <Column name="AggregateID" key="true" />
+        <Column name="AggregateName" />
+        <Column name="Statement" />
+        <Column name="TabStatement" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.CALC_COLUMN_DEPENDENCIES" type="table">
+      <Columns>
+        <Column name="ColumnID" key="true" />
+        <Column name="ParentColumnID" key="true" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.CARDINALITY_TYPES" type="table">
+      <Columns>
+        <Column name="CardinalityTypeID" key="true" />
+        <Column name="CardinalityName" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.COMPRESSION_TYPES" type="table">
+      <Columns>
+        <Column name="CompressionTypeID" key="true" />
+        <Column name="Name" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.CONNECTOR_TYPES" type="table">
+      <Columns>
+        <Column name="ConnectorTypeID" key="true" />
+        <Column name="Type_Name" />
+        <Column name="Description" />
+        <Column name="isOLEDB" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.DEPENDENCY_TYPES" type="table">
+      <Columns>
+        <Column name="DepTypeID" key="true" />
+        <Column name="Dep_Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.JOIN_HIST_TYPES" type="table">
+      <Columns>
+        <Column name="JoinHistTypeID" key="true" />
+        <Column name="Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.JOIN_TYPES" type="table">
+      <Columns>
+        <Column name="JoinTypeID" key="true" />
+        <Column name="JoinName" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.MACRO_LANGUAGES" type="table">
+      <Columns>
+        <Column name="LanguageID" key="true" />
+        <Column name="LanguageName" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.OBJECT_TYPES" type="table">
+      <Columns>
+        <Column name="ObjectTypeID" key="true" />
+        <Column name="Type_Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.OLEDB_TYPES" type="table">
+      <Columns>
+        <Column name="OleDBTypeID" key="true" />
+        <Column name="OleDBTypeName" />
+        <Column name="SQLServerTypeName" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.PACKAGE_TYPES" type="table">
+      <Columns>
+        <Column name="PackageTypeID" key="true" />
+        <Column name="Type_Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.PACKAGE_VERSION" type="table">
+      <Columns>
+        <Column name="PackageID" key="true" />
+        <Column name="VersionMinor" />
+        <Column name="LastCreatedDate" />
+        <Column name="LastCreatedBy" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.PARAMETERS" type="table">
+      <Columns>
+        <Column name="Param_Name" key="true" />
+        <Column name="Default_Value" />
+        <Column name="Description" />
+        <Column name="Settable" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.SAP_DELTAQ_TYPES" type="table">
+      <Columns>
+        <Column name="Type" key="true" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.SAP_DELTAQ_UPDATEMODES" type="table">
+      <Columns>
+        <Column name="Mode" key="true" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.SCHEMA_TYPES" type="table">
+      <Columns>
+        <Column name="SchemaTypeID" key="true" />
+        <Column name="TypeName" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.SCRIPT_TYPES" type="table">
+      <Columns>
+        <Column name="ScriptTypeID" key="true" />
+        <Column name="Type_Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.SOURCE_TYPES" type="table">
+      <Columns>
+        <Column name="SourceTypeID" key="true" />
+        <Column name="Type_Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.SSIS_TYPES" type="table">
+      <Columns>
+        <Column name="SSIS_Type" key="true" />
+        <Column name="hasLength" />
+        <Column name="hasPrecision" />
+        <Column name="hasScale" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.SYSREFS" type="table">
+      <Columns>
+        <Column name="PARENT_TABLE_SCHEMA" key="true" />
+        <Column name="PARENT_TABLE_NAME" key="true" />
+        <Column name="CHILD_TABLE_SCHEMA" key="true" />
+        <Column name="CHILD_TABLE_NAME" key="true" />
+        <Column name="COLUMN_NAME" key="true" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.TABLE_TYPES" type="table">
+      <Columns>
+        <Column name="TableTypeID" key="true" />
+        <Column name="Type_Name" />
+        <Column name="Description" />
+        <Column name="isVIEW" />
+        <Column name="isHistoried" />
+        <Column name="isDatamart" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.TRANS_HIST_TYPES" type="table">
+      <Columns>
+        <Column name="TransHistTypeID" key="true" />
+        <Column name="Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.TRANSFORMATION_TYPES" type="table">
+      <Columns>
+        <Column name="TransTypeID" key="true" />
+        <Column name="Name" />
+        <Column name="Description" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.TYPES" type="table">
+      <Columns>
+        <Column name="TypeID" key="true" />
+        <Column name="ConnectorTypeID" />
+        <Column name="SrcType" />
+        <Column name="hasLength" />
+        <Column name="hasPrecision" />
+        <Column name="hasScale" />
+        <Column name="SrcSSISType" />
+        <Column name="DestType" />
+        <Column name="DestSSISType" />
+        <Column name="Conversion" />
+        <Column name="OLEDBType" />
+        <Column name="ForcedLength" />
+        <Column name="ForcedScale" />
+        <Column name="ForcedPrecision" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.TYPES_DEFAULT" type="table">
+      <Columns>
+        <Column name="TypeID" key="true" />
+        <Column name="ConnectorTypeID" />
+        <Column name="SrcType" />
+        <Column name="hasLength" />
+        <Column name="hasPrecision" />
+        <Column name="hasScale" />
+        <Column name="SrcSSISType" />
+        <Column name="DestType" />
+        <Column name="DestSSISType" />
+        <Column name="Conversion" />
+        <Column name="OLEDBType" />
+        <Column name="ForcedLength" />
+        <Column name="ForcedScale" />
+        <Column name="ForcedPrecision" />
+      </Columns>
+    </Item>
+    <Item name="INTERN.VIEW_DEPENDENCIES" type="table">
+      <Columns>
+        <Column name="TableID" key="true" />
+        <Column name="ParentTableID" key="true" />
+      </Columns>
+    </Item>
   </Items>
-  <SchemaMapping>
-    <SMItem schema1="INTERN" schema2="(none)" />
-    <SMItem schema1="CFG" schema2="CFG" />
-    <SMItem schema1="dbo" schema2="dbo" />
-  </SchemaMapping>
   <ProjectSettings>
     <AllSettings>
       <ComparisonCaseSensitive>1</ComparisonCaseSensitive>
