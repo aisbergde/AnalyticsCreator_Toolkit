@@ -1,4 +1,12 @@
-# Use the New community project on Azure DevOps
+# Hier nur noch Archiv
+
+Since I am not as active as I used to be with AnalyticsCreator, nothing happens here in this project anymore. My focus is on my open source project [DHW - DataHandwerk toolkit mssql](https://datahandwerk.gitlab.io/dhw/index.html). I describe why this project exists in my blog:
+
+- https://datahandwerk.aisberg.de/2021-01-06-meine-vision-eines-werkzeugkastens-fur-daten-handwerker/
+- https://datahandwerk.aisberg.de/2021-03-23-datahandwerk-toolkit-mssql/
+
+Germo Görtz (aisbergde)
+## Use the New community project on Azure DevOps
 
 Please use the new Community project and the Wiki on Azure DevOps. The forum should be used to communicate
 
@@ -11,7 +19,7 @@ Please use the new Community project and the Wiki on Azure DevOps. The forum sho
 
 Some content you will not (yet) find on the project place. The "Repository Manipulator" ist still only here. Some functionallity is or will be available in "Repository Extension" and in the planned "SchemaCompare for AC". Repository templates you will already find in the new project.
 
-# AnalyticsCreator_Toolkit
+## AnalyticsCreator_Toolkit
 
 Tools for working with AnalyticsCreator and its project repositories
 
